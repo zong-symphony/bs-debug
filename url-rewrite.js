@@ -1,4 +1,4 @@
-var urlRewriteRule = require('./config').urlRewriteRule;
+var urlRewriteRule = require('./config').urlRewriteRule || [];
 
 module.exports = function(req, res, next) {
   var url = req.url;
