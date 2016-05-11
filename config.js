@@ -1,13 +1,16 @@
 module.exports = {
+  // change this to your own path
   staticPath: '/Users/joe/Codes/spsites/main/src/main/webapp/static',
-  proxy: 'https://release191-partner.symphonycommerce.com',
+  // change this to your own proxy site
+  proxy: 'https://manage.symphonycommerce.com',
+
+  // if you need some customized proxy
   urlRewriteRules: [{
     match: /static\/templates\/partner\/compose\/directives/g,
     replace: '/templates/partner/compose/directives'
   }],
+  // show rewrite rules log
+  debug: true,
   // if htmlRewriteRules is null, it will use default rewriteRules
-  htmlRewriteRules: [{
-    match: /\/\/symphony-staging\.s3\.amazonaws\.com\/release191\/bundle\/19\.1-SNAPSHOT\/js\/(lego|sites|compose|manage)(\.gz)?\.js/g,
-    replace: "/scripts/dist/$1.min.js"
-  }]
+  htmlRewriteRules: null
 };
