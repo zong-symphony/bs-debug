@@ -5,5 +5,9 @@ module.exports = {
     match: /static\/templates\/partner\/compose\/directives/g,
     replace: '/templates/partner/compose/directives'
   }],
-  htmlRewriteRules: null
+  // if htmlRewriteRules is null, it will use default rewriteRules
+  htmlRewriteRules: [{
+    match: /\/\/symphony-staging\.s3\.amazonaws\.com\/release191\/bundle\/19\.1-SNAPSHOT\/js\/(lego|sites|compose|manage)(\.gz)?\.js/g,
+    replace: "/scripts/dist/$1.min.js"
+  }]
 };
